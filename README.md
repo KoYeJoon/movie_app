@@ -53,4 +53,40 @@ export default App;
 
 ```
 
+<br>
+<br>
+
+
+### 2.1 Reusable Components with JSX + Props
+
+* component-component, children component로 정보 보내는 방법
+
+1. Food component에 kimchi라는 value로 prop name을 줌
+```
+<Food fav="kimchi" />
+<Food fav="ramen" />
+<Food fav="samgiopsal" />
+<Food fav="chukumi" />
+```
+
+2. Food component는 fav를 통해 받은 prop으로 함수 사용가능
+
+```
+(ex.1)
+function Food({ fav }) {
+  return <h1>I like {fav}</h1>
+}
+
+(ex.2)
+function Food(props) {
+  return <h1>I like {props.fav}</h1>
+}
+
+```
+
+--> 재사용이 가능하다. 따라서 김치, 라면, 삼겹살, 쭈꾸미를 fav로 보내면 각각 Food라는 함수를 사용하여 그에 맞는 문구가 출력된다.
+
+
+<br>
+<br>
 
