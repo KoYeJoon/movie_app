@@ -6,6 +6,34 @@ React JS fundamentals Course (2019 Update)
 
 ## lecture contents
 
+### 1 SETUP
+
+[How to use react?]
+
+1. 원하는 폴더에 가서
+
+```
+npx create-react-app {이름}
+```
+
+으로 파일 생성
+
+2. terminal에서 해당 폴더에 가서
+
+```
+npm start 
+```
+
+3. refresh가 필요한 경우
+
+```
+npm i
+```
+
+<br>
+<br>
+
+
 ### 2.0 Creating your first React component
 
 * component ; HTML을 반환하는 함수
@@ -152,6 +180,36 @@ function App() {
 
 ### 2.4 Protection with PropTypes
 
+* prop-types : 내가 전달받은 Props가 내가 원하는 props인지를 확인하는 것
+무조건 이름은 Food.propsType과 같이 정의해야 함 . propsType 이름을 바꿀 수 없음
+
+ex. image 에 잘못된 정보를 보내는 경우 같은거 잡아냄
+    * isRequired: 무조건 있어야 하는 경우 추가되는 조건
+
+1. propsType 검사기 설치
+
+터미널에 아래와 같은 명령어 작성
+
+```
+npm i prop-types
+```
+
+2. 검사 방법 정의 :componenet.propTypes 형식
+
+```
+Food.propTypes = {
+  name : PropTypes.string.isRequired,
+  picture : PropTypes.string.isRequired,
+  rating : PropTypes.number
+};
+```
 
 <br>
 <br>
+
+
+### 3.0 Class Components and State
+
+<br>
+<br>
+
