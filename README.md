@@ -128,6 +128,30 @@ function Food({ name, picture }) {
 
 ### 2.3 map Recap
 
+* map : 각각 object 별로 함수 호출함
+
+
+props key가 달라야 하는 경우가 종종 발생한다. 
+따라서, 배열에 id값을 각각 요소별로 다르게 저장해주고, Food component를 호출할 때 key 값을 주는 것을 생성해준다.
+
+```
+function App() {
+  return (
+    <div>
+      {foodILike.map(dish => (
+        <Food key={dish.id} name={dish.name} picture={dish.image} />
+        ))}
+      </div>
+  );
+}
+```
+
+<br>
+<br>
+
+
+### 2.4 Protection with PropTypes
+
 
 <br>
 <br>
