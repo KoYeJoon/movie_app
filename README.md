@@ -90,3 +90,44 @@ function Food(props) {
 <br>
 <br>
 
+### 2.2 Dynamic Component Generation
+
+
+* 동적 데이터를 추가하는 방법 (ex. array , API에서 가져오는 경우) --> map 사용
+
+<br>
+
+* map ?
+array의 각 item에서 function을 실행하는 array를 가지는 JavaScript function이고 그 function의 result를 갖는 array를 준다.
+
+(ex) foodILike이라는 배열의 요소들을 Food component에 넣고 싶은 경우
+
+```
+function App() {
+  return (
+    <div>
+      {foodILike.map(dish => <Food name ={dish.name} picture ={dish.image}/>)}
+      </div>
+  );
+}
+
+
+
+function Food({ name, picture }) {
+  return <div>
+    <h2>I like {name}</h2>
+    <img src={picture} />
+  </div>
+}
+```
+
+
+<br>
+<br>
+
+
+### 2.3 map Recap
+
+
+<br>
+<br>
