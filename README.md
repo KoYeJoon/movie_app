@@ -250,5 +250,37 @@ class App extends React.Component{
 
 ### 3.1 All you need to know about State
 
+* state는 직접적으로 변경이 불가능하다. 
+ex. this.state= 1 불가능
+
+
+-> 이유 : react는 render function을 Refresh하지 않는다.
+=> 따라서 state의 상태를 변경할때 마다 render를 호출해야 한다. `setState` 이용해야 한다. setState를 통해 react는 virtual DOM을 통해 변경된 부분만 다시 칠한다.
+
+(1) setState 활용 1 : 이쁜방법은 아니다.
+
+```
+this.setState({count : this.state.count + 1});
+```
+
+(2) setState 활용 2
+```
+this.setState(current => ({count : current.count + 1})); 
+```
+
+<br>
+
+
+* 매우 중요한 사실
+
+``setState를 호출할때마다 react는 state와 함께 다시 render를 호출한다.``
+
+
+<br>
+<br>
+
+### 3.2 Component Life Cycle
+
+
 <br>
 <br>
