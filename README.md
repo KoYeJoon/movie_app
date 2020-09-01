@@ -281,6 +281,38 @@ this.setState(current => ({count : current.count + 1}));
 
 ### 3.2 Component Life Cycle
 
+react component에서 사용하는 유일한 function은 render function이다.
+
+* life cycle method : react가 component를 생성하고 없애는 방법이다.
+
+  * component가 생성될 때, 생성되기 전과 생성된 후에 호출되는 다른 function 존재한다. 
+
+
+```
+1. mounting "태어나는 것"
+constructor : javascript에서 class 만들 때 호출되는 것 
+-> super(props);를 호출해야함
+-> screen에 표시될 때 호출됨
+  * getDrivedStateFromProps () : 잘 사용 안함
+  * render() : 컴포넌트 생성시 호출됨.
+  * ComponentDidMount() : Mount 되고 실행되는 듯
+
+
+2. updating : 상태 변경 (setState할 때마다 render 호출)
+  * getDrivedStateFromProps() : 사용안함
+  * shouldComponentUpdate() : update할지 말지 결정하는 것인데 여기서 다루지 않음
+  * componentDidUpdate() : update된후 실행되는 듯
+
+
+3. unmounting "component가 죽음" ->page 바꿀 때 등 발생
+  * componentWillUnmount() : component가 떠날때 호출됨.
+
+```
+<br>
+<br>
+
+### 3.3 Planning the Movie Component
+
 
 <br>
 <br>
