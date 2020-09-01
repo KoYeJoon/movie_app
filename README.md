@@ -210,6 +210,45 @@ Food.propTypes = {
 
 ### 3.0 Class Components and State
 
+* class App 정의 : class App은 react component라는 뜻
+
+
+  * class App 는 function이 아니므로, return을 안하고 render method를 가지고 있다.
+
+  *  react는 자동적으로 모든 class componnet의 render method를 실행하고자 한다.
+
+  * state : 보통 우리가 동적데이터와 함께 작업할 때 만들어진다. 사라지고 생기는 데이터와 같이 바뀌는 데이터를 state안에 넣는다.
+
+  * class component는 state를 가지고 state는 object이다. component의 data를 넣은 공간으로써, data는 변하므로 state를 이용한다.
+
+
+```
+class App extends React.Component{
+  state = {
+    count : 0
+  };
+
+  add = () => {
+    console.log("add");
+  };
+  minus = () => {
+    console.log("minus");
+  };
+
+  render(){
+    return <div>
+      <h1>The number is:  {this.state.count}</h1>
+      <button onClick = {this.add}>Add</button>
+      <button onClick = {this.minus}>Minus</button>
+      </div>
+  }
+}
+```
+
 <br>
 <br>
 
+### 3.1 All you need to know about State
+
+<br>
+<br>
