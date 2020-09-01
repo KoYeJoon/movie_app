@@ -313,6 +313,29 @@ constructor : javascript에서 class 만들 때 호출되는 것
 
 ### 3.3 Planning the Movie Component
 
+* class App extends React.component 에서 componentDidMount() , 즉 mount 된 직후 실행되는 함수에서 6초 뒤에 준비되었다는 문구를 출력하고 싶은 경우
 
+```
+componentDidMount() {
+    setTimeout(() => {
+      this.setState({isLoading : false});
+    }, 6000);
+  }
+
+  render(){
+    const { isLoading } = this.state;
+
+    return <div>
+      {isLoading ? "Loading..." : "we are ready"}
+      </div>;
+  }
+```
+
+
+<br>
+<br>
+
+
+### 4.0 Fetching Movies from API
 <br>
 <br>
