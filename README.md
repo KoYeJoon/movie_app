@@ -524,5 +524,91 @@ function Movie({ id, year, title, summary, poster }) {
 
 ### 4.4 Styles Timelapse
 
+* 몰랐던 css 문법
+
+
+  * box-sizing -> 박스의 크기를 화면에 표시하는 방식을 변경하는 속성
+    1. content-box : 기본값으로 너비, 높이는 content 영역만을 의미함(border, padding, margin 제외)
+    2. border-box : 너비, 높이 계산 시 content, padding, border를 포함함(margin 제외)
+
+  <br>
+
+  * justify-content -> 콘텐츠의 좌우 관계 정렬 상태를 정의
+
+  ```
+  justify-content : flex-start | flex-end | center | space-between | space-around | inherit;
+  ```
+
+    1. flex-start : 요소의 정렬상태를 왼쪽(기본)으로 설정
+    2. flex-end : 요소의 좌우 정렬 상태를 오른쪽 끝점으로 설정
+    3. center : 요소의 좌우 정렬 상태를 가운데로 설정
+    4. space-between : 요소와 요소사이의 간격을 왼쪽과 오른쪽을 기준으로 설정
+    5. space-around : 요소와 요소 사이의 간격을 가운데를 기준으로 설정
+    6. inherit : justify-content의 속성 값을 상위요소한테 상속받음
+
+  
+  <br>
+
+  * flex-wrap : 나열된 요소들의 총 넓이가 부모 넓이보다 클 때, 다음 줄에 이어서 나열해주는 기능
+
+    1. nowrap : 부모 넓이에 맞게 요소들의 넓이를 강제 축소
+    2. wrap : 부모 넓이보다 요소들의 총 넓이가 크다면 나머지 요소들은 다음줄로 줄 바꿈
+    3. wrap-reverse : 줄바꿈하는 요소들을 역순으로 배열
+    4. initial : 기본 값 (nowrap)
+    5. inherit : 부모 요소의 설정 값을 사용
+
+  <br>
+
+  * box-shadow : 박스 요소에 그림자를 넣는 속성
+
+    1. none : 기본값 , 그림자가 표시되지 않음
+    2. h-shadow : 필수지정, 수평 그림자 위치
+        양수 값 지정 : 박스 오른쪽에 그림자가 생김
+        음수 값 지정 : 박스 왼쪽에 그림자가 생김
+    3. v-shadow : 필수지정, 수직 그림자 위치
+        양수 값 지정 : 박스 위쪽에 그림자가 생김
+        음수 값 지정 : 박스 아래쪽에 그림자가 생김
+    4. blur : 선택지정, 그림자의 흐림 정도
+        0 : 그림자가 진함
+        ++ : 점점 그림자가 흐릿해짐 ( 양수값만 허용)
+    5. spread : 선택지정 , 그림자가 드리워지는 정도
+        양수 값 지정 : 그림자가 커짐
+        음수 값 지정 : 그림자가 작아짐
+
+  <br>
+
+  * rgba(x,y,z,w) : (적색, 녹색, 청색, 투명도)
+    * w : 0.0(투명)~1.0(불투명)
+
+
+  <br>
+
+  * position
+
+  ```
+  position: static | relative | absolute | fixed | sticky
+  ```
+    1. static : 요소를 문서 흐름에 맞추어 배치
+    2. relative : 이전 요소(주로 부모 요소)에 자연스럽게 연결하여 위치 지정
+    3. absolute : 원하는 위치를 지정해 배치
+    4. fixed : 지정한 위치에 고정하여 배치
+    5. sticky : 위치에 따라서 동작방식이 달라짐. 요소가 임게점 (scroll 박스 기준) 이전에는 relative와 같이 동작하고, 그 이후에는 fixed와 같이 동작
+
 <br>
 <br>
+
+
+### 4.5 Cutting the summary
+
+<br>
+<br>
+
+
+
+
+##### reference
+
+니꼬쌤 github ; https://github.com/nomadcoders/movie_app_2019
+네이버 블로그 : http://blog.naver.com/PostView.nhn?blogId=shinekjm&logNo=220894933361
+네이버 블로그 : https://m.blog.naver.com/PostView.nhn?blogId=pjh445&logNo=221160742046&proxyReferer=https:%2F%2Fwww.google.com%2F
+tistory 블로그 : https://engkimbs.tistory.com/922 [새로비]
