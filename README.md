@@ -362,6 +362,76 @@ getMovies = async() => {
 
 ### 4.1 Rendering the Movies
 
+1. console.log로 movies의 형태를 보면 data-data-movie 이렇게 접근이 가능하다는 것을 알 수 있음
+
+2. (1)movies.data.data.movie  or (2){data : {data : movies}} 로 표현 가능
+
+(2)를 적용한 예시
+```
+const {
+      data : {
+        data : { movies }
+      }
+    } = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+
+```
+
+<br>
+
+(1) this.setState({movies : movies}); 
+(1)movies 좌항 : state에서 옴
+(1)movies 우항 : axios에서 옴
+or (2)this.setState({movies})
+
+* component가 state가 필요 없을 때에는 class component로 정의하지 않아도 됨 -> Movie.js는 class component로 정의하지 않아도 됨
+
+(Movie.js)
+```
+import React from "react";
+import PropTypes from "prop-types";
+
+function Movie({ id, year, title, summary, poster }) {
+  return <h4>{title}</h4>;
+}
+
+Movie.propTypes = {
+  id: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired
+};
+
+export default Movie;
+```
+
+(App.js)
+
+```
+render(){
+    const { isLoading,movies } = this.state;
+
+    return (
+      <div>
+        {isLoading
+          ? "Loading..."
+          : movies.map(movie => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                year={movie.year}
+                title={movie.title}
+                summary={movie.summary}
+                poster={movie.medium_cover_image}
+              />
+            ))}
+      </div>
+    );
+  }
+
+```
 
 <br>
 <br>
+
+### 4.2 Styling the Movies
