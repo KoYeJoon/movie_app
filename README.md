@@ -499,5 +499,30 @@ function Movie({ id, year, title, summary, poster }) {
 
 
 ### 4.3 Adding Genres
+
+* javaScript에서는 div class 와 같이 이용하는 경우 className이라고 정의해야함.
+  * 이유  : class로 묶는 객체와 혼란을 겪기 때문에
+
+
+* map을 사용하는 경우, key 값 필요(item, index)
+
+
+(Movie.js)
+```
+<ul className="genres">
+          {genres.map((genre, index) => (
+            <li key={index} className="genres__genre">
+              {genre}
+            </li>
+          ))}
+        </ul>
+```
+
+
+<br>
+<br>
+
+### 4.4 Styles Timelapse
+
 <br>
 <br>
