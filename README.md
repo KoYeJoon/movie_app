@@ -435,3 +435,69 @@ render(){
 <br>
 
 ### 4.2 Styling the Movies
+
+* styling을 위해 App.css와 Movie.css를 만들고 이를 활용하는 js file에서 import 해준다.
+
+```
+(ex)
+import "./App.css";
+```
+
+
+<br>
+
+1. Styling을 위해 div 대신 section으로 구분해주고, render 함수에서 return 하는 부분을 여러개의 class로 나누어줌
+
+(App.js)
+```
+render(){
+    const { isLoading,movies } = this.state;
+
+    return (
+      <section class="container">
+      {isLoading ? (
+        <div class="loader">
+          <span class="loader__text">Loading...</span>
+        </div>
+      ) : (
+        <div class="movies">
+          {movies.map(movie => (
+            <Movie
+              key={movie.id}
+              id={movie.id}
+              year={movie.year}
+              title={movie.title}
+              summary={movie.summary}
+              poster={movie.medium_cover_image}
+            />
+          ))}           
+            </div>
+          )}   
+      </section>
+    );
+  }
+```
+
+
+2. Movie component 역시, styling을 위해서 return하는 것을 여러 개의 class로 분할해줌. 
+
+```
+function Movie({ id, year, title, summary, poster }) {
+  return (<div class="movie">
+      <img src={poster} alt={title} title={title} />
+      <div class="movie__data">
+      <h3 class="movie__title" >{title}</h3>
+      <h5 class ="movie__year">{year}</h5>
+      <p class="movie__summary">{summary}</p>
+      </div>
+      </div>
+      );
+```
+
+<br>
+<br>
+
+
+### 4.3 Adding Genres
+<br>
+<br>
