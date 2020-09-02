@@ -600,10 +600,27 @@ function Movie({ id, year, title, summary, poster }) {
 
 ### 4.5 Cutting the summary
 
+* summary가 긴 경우, 자르기
+
+(javascript)
+ex . const summary = "60글자"
+summary.slice(0,10)
+앞에서부터 10글자 반환해줌
+
+(응용한 예시)
+
+```
+<p className="movie__summary">{summary.slice(0, 180)}...</p>
+```
+
 <br>
 <br>
 
 
+### 5.0 
+
+<br>
+<br>
 
 
 ##### reference
