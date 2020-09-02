@@ -337,5 +337,31 @@ componentDidMount() {
 
 
 ### 4.0 Fetching Movies from API
+
+* axios : fetch위에 있는 작은 layer   npm install axios을 통해 설치한 후, 
+
+```
+import axios from "axios";
+```
+을 통해 import한다. 
+
+
+* async ~ await : 비동기, 기다려라
+데이터받아오는데 시간이 걸려서 좀 기다려야하는 경우에 사용한다.
+
+```
+getMovies = async() => {
+    const movies = await  axios.get("https://yts-proxy.now.sh/list_movies.json");
+  }
+
+```
+
+<br>
+<br>
+
+
+### 4.1 Rendering the Movies
+
+
 <br>
 <br>
