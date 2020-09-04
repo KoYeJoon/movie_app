@@ -675,6 +675,13 @@ $ npm run deploy
 <br>
 <br>
 
+### 5.1 Are we done?
+
+* react hook 덕분에 state를 갖기 위해 class component를 가질 필요가 없다. -> react hook 강의 참고
+
+
+<br>
+<br>
 
 ##### reference
 
