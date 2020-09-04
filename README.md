@@ -617,7 +617,60 @@ summary.slice(0,10)
 <br>
 
 
-### 5.0 
+### 5.0 Deploying to Github Pages
+
+* gh-pages 이용하기
+
+gh-pages : 웹사이트를 github의 github page 도메인에 나타나게 해줌.
+
+1. movie_app directory에서 gh-pages 설치 
+
+```
+$ npm i gh-pages
+```
+
+<br>
+
+2. github에서 프로젝트 이름을 통해 가져온다.
+
+(package.json)
+```
+"homepage" : "https://KoYeJoon.github.io/movie_app/"
+```
+
+<br>
+
+3. npm run build를 통해 build 폴더를 제공받는다. 
+
+```
+$ npm run build
+```
+
+<br>
+
+4. scripts 안에 deploy를 추가한다. deploy는 gh-pages를 호출하고, build 폴더를 업로드 한다.
+
+(package.json)
+```
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy" : "gh-pages -d build ",
+    "predeploy" : "npm run build"
+  },
+```
+
+<br>
+
+5. terminal 에서 build 한다.
+
+```
+$ npm run deploy
+```
+<br>
+
+6. " https://KoYeJoon.github.io/movie_app/ "에 들어가서 확인해본다.
+
 
 <br>
 <br>
