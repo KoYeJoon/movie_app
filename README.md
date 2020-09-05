@@ -683,6 +683,24 @@ $ npm run deploy
 <br>
 <br>
 
+### 6.0 Getting Ready for the Router
+
+* install react-router-dom
+
+```
+$npm install react-router-dom
+```
+
+* 첫번째 screen은 영화설명 , 두번째 screen은 about 페이지가 되도록 구성
+
+* components 폴더에는 domain을 담고, routes 폴더에는 각화면 Home.js와 About.js에 관한 내용을 담도록 한 것 같다.   
+
+--> App.js에 있던 내용을 home.js로 옮김
+
+
+<br>
+<br>
+
 ##### reference
 
 니꼬쌤 github ; https://github.com/nomadcoders/movie_app_2019
