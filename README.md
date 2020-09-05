@@ -701,6 +701,36 @@ $npm install react-router-dom
 <br>
 <br>
 
+### 6.1 Building the Router
+
+* router 
+  * /home -> home.js
+  * /about -> about.js
+  로 이동하도록 함
+
+* basic url을 우선적으로, rendering한다. 
+두개 이상이 rendering 될 수 있으므로 exact = {true}라는 것을 통해 정확히 그 주소일 때만 랜더링되도록 한다.
+
+```
+function App() {
+  return (
+    <HashRouter>
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/about" component={About} />
+    </HashRouter>
+  );
+}
+```
+
+<br>
+<br>
+
+
+### 6.2 Building the Navigation
+
+<br>
+<br>
+
 ##### reference
 
 니꼬쌤 github ; https://github.com/nomadcoders/movie_app_2019
