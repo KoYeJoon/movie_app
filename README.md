@@ -728,9 +728,61 @@ function App() {
 
 ### 6.2 Building the Navigation
 
+1. Navigation.css와 Navigation.js를 component 폴더에 만들어주기
+
+(Navigation.js)
+* Link : Home 혹은 about 버튼을 a href로 연결하였을 때는 전체화면이 새로고침되므로 이를 방지하기 위해 Link를 이용한다.
+
+```
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navigation.css";
+
+function Navigation() {
+  return (
+    <div className="nav">
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+    </div>
+  );
+}
+
+export default Navigation;
+```
+
+
+
+<br>
+
+2. App.js에서 연결해주기
+
+```
+import Navigation from "./components/Navigation";
+
+function App() {
+  return (
+    <HashRouter>
+      <Navigation />
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/about" component={About} />
+    </HashRouter>
+  );
+}
+```
+* Link : router밖에서 사용불가
+따라서 `<HashRouter>` 안에서 `<Navigation />`을 정의하여 사용하기
+
+* HashRouter와 BrowserRouter 차이
+  * HashRouter : /#/와 같은 것이 있으나 github page에 올리기 편함.
+  * BrowserRouter : /#/와 같은 요상한 것이 없음 -> github page에 사용하기는 어려움.
 <br>
 <br>
 
+### 6.3 Sharing Props Between Routes
+
+<br>
+<br
+>
 ##### reference
 
 니꼬쌤 github ; https://github.com/nomadcoders/movie_app_2019
