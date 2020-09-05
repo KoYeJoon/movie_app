@@ -780,9 +780,12 @@ function App() {
 
 ### 6.3 Sharing Props Between Routes
 
+* 모든 router는 props를 갖는다.
+* `<Link>`에는 Props를 보낼 수 있다.
+
+
 <br>
-<br
->
+<br>
 ##### reference
 
 니꼬쌤 github ; https://github.com/nomadcoders/movie_app_2019
