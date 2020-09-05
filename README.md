@@ -786,6 +786,16 @@ function App() {
 
 <br>
 <br>
+
+### 6.4 Redirecting
+
+* redirect ; 이 코드에서는 location이 undifined 된 경우, home으로 보낸다.
+-> url에 직접적으로 /movie-direct로 하면 redirect 되도록 함.
+
+<br>
+<br>
+
+
 ##### reference
 
 니꼬쌤 github ; https://github.com/nomadcoders/movie_app_2019
